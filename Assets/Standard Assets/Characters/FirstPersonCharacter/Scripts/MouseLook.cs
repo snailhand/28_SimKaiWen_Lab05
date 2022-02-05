@@ -95,6 +95,11 @@ namespace UnityStandardAssets.Characters.FirstPerson
             }
         }
 
+        public void UnlockCursorLock()
+        {
+            m_cursorIsLocked = false;
+        }
+
         Quaternion ClampRotationAroundXAxis(Quaternion q)
         {
             q.x /= q.w;
