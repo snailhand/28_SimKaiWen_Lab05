@@ -16,34 +16,41 @@ public class CoinScript : MonoBehaviour
         UpdateCoinUI();
     }
 
-    private void OnTriggerEnter(Collider other)
-    {
-        if(other.gameObject.layer == LayerMask.NameToLayer("Coins"))
-        {
-            if(coinCount <= 1)
-            {
-                WinCondition();
-            }
-
-            Destroy(other.gameObject);
-            coinCount--;
-            UpdateCoinUI();
-        }
-    }
-
     private void UpdateCoinUI()
     {
         coinText.text = "Coins Left: " + coinCount.ToString();
     }
 
-    private void WinCondition()
+    private void WinLoseCondition(bool state)
     {
-        SceneHandler.inst.WinScene();
+        if(state)
+            SceneHandler.inst.WinScene();
+        else
+            SceneHandler.inst.LoseScene();
 
         //stops player from moving//
         playerController.enabled = false;
 
         var fpsController = transform.GetComponent<UnityStandardAssets.Characters.FirstPerson.FirstPersonController>();
         fpsController.UnlockCursor();
+    }
+
+    private void OnTriggerEnter(Collider other)
+    {
+        if (other.gameObject.layer == LayerMask.NameToLayer("Coins"))
+        {
+            if (coinCount <= 1)
+            {
+                WinLoseCondition(true);
+            }
+
+            Destroy(other.gameObject);
+            coinCount--;
+            UpdateCoinUI();
+        }
+        if (other.gameObject.layer == LayerMask.NameToLayer("Water"))
+        {
+            WinLoseCondition(false);
+        }
     }
 }
