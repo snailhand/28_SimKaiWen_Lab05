@@ -1479,10 +1479,11 @@ MonoBehaviour:
     BobAmount: 0.1
   m_StepInterval: 5
   m_FootstepSounds:
-  - {fileID: 8300000, guid: 42e65e088b3f4374e851b8dbd38f3df9, type: 3}
-  - {fileID: 8300000, guid: 8bc94ec6ed537e743b481638bdcd503d, type: 3}
-  m_JumpSound: {fileID: 8300000, guid: 5897aeed9b676024fbb8c694b421a861, type: 3}
-  m_LandSound: {fileID: 8300000, guid: 3b09d59f4499d45428baa7a21e954296, type: 3}
+  - {fileID: 8300000, guid: dcbbbe7f6fa72456780af0df979dd2f2, type: 3}
+  - {fileID: 8300000, guid: aef1e9e2dba5441d0a15d9b26e8a2919, type: 3}
+  - {fileID: 8300000, guid: 96e570e1f57d941a99b075e94a6657de, type: 3}
+  m_JumpSound: {fileID: 8300000, guid: b956f758e30e243e6ae392e5ec87a31c, type: 3}
+  m_LandSound: {fileID: 8300000, guid: b1d46e61af97c4e999513b1ca0de7f40, type: 3}
 --- !u!1 &504953640
 GameObject:
   m_ObjectHideFlags: 0
@@ -1682,7 +1683,7 @@ CharacterController:
   m_Height: 1.8
   m_Radius: 0.5
   m_SlopeLimit: 45
-  m_StepOffset: 0.3
+  m_StepOffset: 0.85
   m_SkinWidth: 0.08
   m_MinMoveDistance: 0
   m_Center: {x: 0, y: 0, z: 0}
