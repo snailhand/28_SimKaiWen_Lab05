@@ -5,6 +5,12 @@ using UnityEngine.SceneManagement;
 
 public class SceneHandler : MonoBehaviour
 {
+    public static SceneHandler inst;
+
+    private void Start()
+    {
+        inst = this;
+    }
 
     public void SwitchScene(string sceneName)
     {
@@ -24,5 +30,10 @@ public class SceneHandler : MonoBehaviour
     public void ReloadScene()
     {
         SceneManager.LoadScene(SceneManager.GetActiveScene().name);
+    }
+
+    public void NextScene()
+    {
+        SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1);
     }
 }
