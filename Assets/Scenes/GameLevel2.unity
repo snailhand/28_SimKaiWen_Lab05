@@ -1730,6 +1730,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   coinText: {fileID: 2241901003232558303}
+  coinFx: {fileID: 4169309682503614053, guid: ea2d3e58da90c99489968c24b1a190a4, type: 3}
+  pickupFx: {fileID: 9170958008382411912, guid: f13f74dc7b8952d4d98d00b856fa580a,
+    type: 3}
 --- !u!1 &513957027
 GameObject:
   m_ObjectHideFlags: 0
@@ -6516,4 +6519,5 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d0b136f5104f22c4993ef4491044c244, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  timerActive: 0
   totalTime: 150
