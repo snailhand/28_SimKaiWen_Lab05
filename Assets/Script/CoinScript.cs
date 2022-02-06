@@ -1,7 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-using UnityEngine.UI;
+using TMPro;
 
 public class CoinScript : MonoBehaviour
 {
@@ -30,7 +30,9 @@ public class CoinScript : MonoBehaviour
 
         //stops player from moving//
         playerController.enabled = false;
-
+        var timer = GameObject.Find("Timer").GetComponent<TimerScript>();
+        timer.timerActive = false;
+        
         var fpsController = transform.GetComponent<UnityStandardAssets.Characters.FirstPerson.FirstPersonController>();
         fpsController.UnlockCursor();
     }
