@@ -9,6 +9,9 @@ public class CoinScript : MonoBehaviour
     private CharacterController playerController;
     [SerializeField] TMPro.TMP_Text coinText;
 
+    public GameObject coinFx;
+    public GameObject pickupFx;
+
     void Start()
     {
         coinCount = GameObject.Find("Coins").transform.childCount;
@@ -48,11 +51,21 @@ public class CoinScript : MonoBehaviour
 
             Destroy(other.gameObject);
             coinCount--;
+            PlayParticleEffect(other.transform);
+
             UpdateCoinUI();
         }
         if (other.gameObject.layer == LayerMask.NameToLayer("Water"))
         {
             WinLoseCondition(false);
         }
+    }
+
+    private void PlayParticleEffect(Transform coin)
+    {
+        var effect1 = Instantiate(coinFx, coin.position, Quaternion.Euler(90, 0, 0));
+        var effect2 = Instantiate(pickupFx, coin.position, Quaternion.Euler(90, 0, 0));
+        Destroy(effect1, 3);
+        Destroy(effect2, 3);
     }
 }
